@@ -1,5 +1,8 @@
 # Horae
 horae    u:object_r:horae_service:s0
 
+# Linearmotor Vibrator
+linearmotor     u:object_r:linearmotor_vibrator_service:s0
+
 # OSENSE
 osensemanager   u:object_r:osense_service:s0
