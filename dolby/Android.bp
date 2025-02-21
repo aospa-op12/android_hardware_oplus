@@ -23,7 +23,7 @@ android_app {
         "androidx.compose.runtime_runtime",
         "androidx.preference_preference",
         "com.google.android.material_material",
-        "org.lineageos.settings.resources",
+        "co.aospa.resources",
     ],
 
     required: ["preinstalled-packages-platform-dolby.xml"],
