@@ -6,3 +6,14 @@ attribute vendor_hal_$1;
 attribute vendor_hal_$1_client;
 attribute vendor_hal_$1_server;
 ')
+
+#####################################
+# hal_attribute_lineage(hal_name)
+define(`hal_attribute_lineage', `
+attribute hal_$1;
+expandattribute hal_$1 true;
+attribute hal_$1_client;
+expandattribute hal_$1_client true;
+attribute hal_$1_server;
+expandattribute hal_$1_server false;
+')
