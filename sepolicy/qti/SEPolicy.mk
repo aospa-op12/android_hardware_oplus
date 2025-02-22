@@ -7,6 +7,10 @@
 SEPOLICY_PLATFORM := $(subst device/qcom/sepolicy_vndr/,,$(SEPOLICY_PATH))
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
+    hardware/oplus/sepolicy/qti/dynamic \
+    hardware/oplus/sepolicy/qti/dynamic/$(SEPOLICY_PLATFORM)
+
+BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/oplus/sepolicy/qti/vendor \
     hardware/oplus/sepolicy/qti/vendor/$(SEPOLICY_PLATFORM)
 
