@@ -42,6 +42,9 @@ ifeq ($(TARGET_BOARD_PLATFORM),pineapple)
         hardware/oplus/sepolicy/qti/vendor/sm8650
 endif
 
+BOARD_SEPOLICY_M4DEFS += \
+    sysfs_socinfo_sensitive=vendor_sysfs_soc_sensitive
+
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS := $(shell echo $(SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS) | tr ' ' '\n' | sort -u | tr '\n' ' ')
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS := $(shell echo $(SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS) | tr ' ' '\n' | sort -u | tr '\n' ' ')
 

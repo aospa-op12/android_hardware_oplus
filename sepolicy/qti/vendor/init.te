@@ -1,5 +1,7 @@
 allow init hal_graphics_mapper_hwservice:hwservice_manager find;
 
+allow init vendor_proc_oplus_version:file r_file_perms;
+
 allow init vendor_sysfs_usb_supply:file w_file_perms;
 allow init vendor_sysfs_wireless:file w_file_perms;
 

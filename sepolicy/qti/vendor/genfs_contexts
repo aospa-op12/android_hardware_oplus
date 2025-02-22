@@ -75,6 +75,9 @@ genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/double_tap_pressed    u:object_r:vendor_sysfs_sensor_tap:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi1/spi1.0/synaptics_tcm_hbp.0/fp_pressed            u:object_r:vendor_sysfs_sensor_tap:s0
 
+# Soc
+genfscon sysfs /devices/soc0/serial_number            u:object_r:sysfs_socinfo_sensitive:s0
+
 # TOF
 genfscon sysfs /kernel/tof_control    u:object_r:vendor_sysfs_tof:s0
 genfscon sysfs /module/stmvl53l1      u:object_r:vendor_sysfs_tof:s0
