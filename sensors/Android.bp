@@ -3,9 +3,30 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
+
+soong_config_module_type {
+    name: "oplus_sensors_hal_cc_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "OPLUS_SENSORS",
+    bool_variables: ["USES_TAP_SENSOR", "USES_DOUBLE_TAP_SENSOR"],
+    properties: ["cppflags"],
+}
+
+oplus_sensors_hal_cc_defaults {
+    name: "oplus_sensors_hal_defaults",
+    soong_config_variables: {
+        USES_TAP_SENSOR: {
+           cppflags: ["-DUSES_TAP_SENSOR"],
+        },
+        USES_DOUBLE_TAP_SENSOR: {
+           cppflags: ["-DUSES_DOUBLE_TAP_SENSOR"],
+        },
+    },
+}
+
 cc_library_shared {
     name: "sensors.oplus",
-    defaults: ["hidl_defaults"],
+    defaults: ["hidl_defaults", "oplus_sensors_hal_defaults"],
     srcs: [
         "Sensor.cpp",
         "SensorsSubHal.cpp",
@@ -27,13 +48,8 @@ cc_library_shared {
         "android.hardware.sensors@1.0-convert",
         "android.hardware.sensors@2.X-multihal",
     ],
-    cflags: ["-DLOG_TAG=\"sensors.oplus\""] + select(soong_config_variable("oplus_sensors", "uses_tap_sensor"), {
-        "true": ["-DUSES_TAP_SENSOR"],
-        default: [],
-    })
-    + select(soong_config_variable("oplus_sensors", "uses_double_tap_sensor"), {
-        "true": ["-DUSES_DOUBLE_TAP_SENSOR"],
-        default: [],
-    }),
+    cflags: [
+        "-DLOG_TAG=\"sensors.oplus\"",
+    ],
     vendor: true,
 }
