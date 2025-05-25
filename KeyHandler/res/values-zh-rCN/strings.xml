@@ -5,6 +5,7 @@
 -->
 <resources>
     <string name="alert_slider_category_title">警报滑块</string>
+    <string name="alert_slider_summary">自定义警报滑块</string>
     <string name="alert_slider_selection_dialog_title">操作</string>
     <string name="alert_slider_top_position">顶部位置</string>
     <string name="alert_slider_middle_position">中间位置</string>
@@ -16,4 +17,6 @@
     <string name="alert_slider_mode_dnd_total_silence">完全静音</string>
     <string name="alert_slider_mute_media_title">静音，包括媒体音量</string>
     <string name="alert_slider_mute_media_summary">切换静音同时静音媒体</string>
+    <string name="alert_slider_dialog_title">显示警报滑块对话框</string>
+    <string name="alert_slider_dialog_summary">当警报滑块位置变化时显示对话框</string>
 </resources>
