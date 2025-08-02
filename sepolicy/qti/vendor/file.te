@@ -49,6 +49,9 @@ type nvram_socket, file_type;
 # Performance
 type vendor_proc_oplus_scheduler, fs_type, proc_type;
 
+# Secure
+type vendor_proc_oppo_secure_common_file, fs_type, proc_type;
+
 # Sensors
 type vendor_proc_eng_cali_file, fs_type, proc_type;
 type vendor_proc_oplus_als_file, fs_type, proc_type;
