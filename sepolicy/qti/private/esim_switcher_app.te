@@ -9,5 +9,3 @@ binder_call(esim_switcher_app, radio)
 
 allow esim_switcher_app app_api_service:service_manager find;
 allow esim_switcher_app radio_service:service_manager find;
-
-get_prop(esim_switcher_app, vendor_persist_nfc_prop)
