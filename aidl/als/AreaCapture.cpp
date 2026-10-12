@@ -6,6 +6,7 @@
 #include "AreaCapture.h"
 
 #include <android-base/properties.h>
+#include <android/gui/SecureLayerMode.h>
 #include <gui/AidlUtil.h>
 #include <gui/SurfaceComposerClient.h>
 #include <gui/SyncScreenCaptureListener.h>
