@@ -291,11 +291,9 @@ void SysfsPollingOneShotSensor::setOperationMode(OperationMode mode) {
 
 void SysfsPollingOneShotSensor::run() {
     std::unique_lock<std::mutex> runLock(mRunMutex);
-    bool reportEvent = false;
 
     while (!mStopThread) {
         if (!mIsEnabled || mMode == OperationMode::DATA_INJECTION) {
-            reportEvent = false;
             mWaitCV.wait(runLock, [&] {
                 return ((mIsEnabled && mMode == OperationMode::NORMAL) || mStopThread);
             });
@@ -311,15 +309,12 @@ void SysfsPollingOneShotSensor::run() {
                 continue;
             }
 
-            if (mPolls[1].revents == mPolls[1].events && readBool(mPollFd, true /* seek */) &&
-                reportEvent) {
+            if (mPolls[1].revents == mPolls[1].events && readBool(mPollFd, true /* seek */)) {
                 activate(false, false, false);
                 mCallback->postEvents(readEvents(), isWakeUpSensor());
             } else if (mPolls[0].revents == mPolls[0].events) {
                 readBool(mWaitPipeFd[0], false /* seek */);
             }
-
-            reportEvent = true;
         }
     }
 }
